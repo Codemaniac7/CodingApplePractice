@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   var 출석부 = ["흥민", "영희", "철수", "재석"];
+
+      //   출석부.forEach(function (name) {
+      //     // console.log(name);
+      //   });
+
+      //   function 이름찾기(someone) {
+      //     for (let i = 0; i < 출석부.length; i++) {
+      //       if (출석부[i] === someone) {
+      //         console.log("있어요");
+      //       }
+      //     }
+      //   }
+
+      //   이름찾기("영희");
+      //   이름찾기("영수");
+      //   이름찾기("흥민");
+
+      //   function 구구단() {
+      //     for (let i = 2; i < 10; i++) {
+      //       for (let j = 1; j < 10; j++) {
+      //         console.log(i * j);
+      //       }
+      //     }
+      //   }
+
+      //   구구단();
+
+      var 모의고사성적 = [50, 65, 60];
+      var 십일월모의 = 30;
+
+      function 이번이잘본건가(score, recentScore) {
+        let sum = 0;
+        for (i = 0; i < 모의고사성적.length; i++) {
+          sum = sum + 모의고사성적[i];
+        }
+        if (십일월모의 - sum / 모의고사성적.length > 0) {
+          console.log(
+            `평균보다 ${십일월모의 - sum / 모의고사성적.length}점이 올랐네요`
+          );
+        } else {
+          console.log(
+            `평균보다 ${-(
+              십일월모의 -
+              sum / 모의고사성적.length
+            )}점이 떨어졌네요 재수추천`
+          );
+        }
+      }
+
+      이번이잘본건가(모의고사성적, 십일월모의);
+    </script>
+  </body>
+</html>

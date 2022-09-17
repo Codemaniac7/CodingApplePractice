@@ -1,0 +1,77 @@
+:root {
+  scroll-behavior: auto;
+}
+
+.form-hide {
+  display: none;
+}
+
+.main-bg {
+  background: lightgrey;
+  padding: 100px 20px;
+}
+
+.dark {
+  background: #000;
+  color: white;
+}
+
+.black-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 6;
+  padding: 30px;
+  display: none;
+}
+.white-bg {
+  background: white;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.show-modal {
+  display: block;
+}
+
+.slide-container {
+  width: 300vw;
+  /* transition: all 1s; */
+}
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+.slide-box img {
+  width: 100%;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.navbar {
+}
+
+.list-group {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  transition: all 1s;
+}
+
+.process-bar {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background: #000;
+}

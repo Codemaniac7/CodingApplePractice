@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World!</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="card.css" />
+  </head>
+  <body>
+    <div class="card-background">
+      <div class="card-box">
+        <img src="card1.png" />
+      </div>
+      <div class="card-box">
+        <img src="card2.png" />
+      </div>
+      <div class="card-box">
+        <img src="card3.png" />
+      </div>
+    </div>
+
+    <script>
+      $(window).scroll(function () {
+        var 높이 = $(window).scrollTop();
+        // console.log(높이);
+
+        // 650 ~ 1150까지 스크롤바를 내리면,
+        // 첫째 카드의 opacity를 1 ~ 0으로 서서히 변경 해주세요
+        var y = (-1 / 500) * 높이 + 115 / 50;
+        // $(".card-box").eq(0).css("opacity", y);
+        document.querySelectorAll(".card-box")[0].style.opacity = y;
+
+        var firstCardScale = (-1 / 5000) * 높이 + (1 + 650 / 5000);
+
+        cardLength = document.querySelectorAll(".card-box").length;
+        document.querySelectorAll(
+          ".card-box"
+        )[0].style.transform = `scaleX(${firstCardScale})`;
+        // for (i = 0; i < cardLength; i++) {
+        //   document.querySelectorAll(".card-box")[i];
+        // }
+
+        // 1150 ~ 1850까지 스크롤바를 내리면,
+        // 둘째 카드의 opacity를 1 ~ 0으로 서서히 변경 해주세요
+        //1150 => opacity 1 = a * 1150 + b = 1 = 1150a = 1-b
+        //1850 => opacity 0 = a * 1850 + b = 0 = 1850a = -b
+        // -750a = 1 => a = -(1/750)
+        //-1150/750 + b = 1
+        // b = 1 + 1150/750
+        //b = 2+ 400/750
+        //b = 2+ 8/17
+
+        var secondCard = (-1 / 750) * 높이 + (2 + 8 / 17);
+        $(".card-box").eq(1).css("opacity", secondCard);
+
+        // 스크롤 650 ~ 1150까지 내리면 첫 번째 카드 scale이 1.0에서 0.9로 변하게 하기(transform)
+
+        // 650일 때 scaleX(1.0)
+        // 1150일 때 scaleX(0.9)
+        // ax+ b = 1;
+        // 650a + b =1;
+        // 1150a + b = 0.9;
+        //500a = -0.1;
+        // a = (-1/10) * (1/500)
+        // a = (-1/5000)
+        // (-650/5000) + b = 1;
+        // b= 1 + (650/5000)
+
+        // document.querySelectorAll(".card-box").forEach((e, i) => {
+        //   // console.log(e);
+        // });
+        // $(".card-box").eq(0).css("transform", "scale(firstCardScale)");
+      });
+    </script>
+  </body>
+</html>
